@@ -1,0 +1,202 @@
+/* Genel Kart Konteyner */
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  font-family: "Poppins", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Kart Tasarımı */
+.card-design {
+  background: linear-gradient(
+    135deg,
+    #7b4397,
+    #dc2430
+  ); /* Gradient arka plan */
+  color: white;
+  border-radius: 15px;
+  width: 350px;
+  height: 220px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Efekti: Kart Büyüme ve Gölge */
+.card-design:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5); /* Hover sırasında gölge efekti */
+}
+
+/* Banka Adı */
+.bank-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  animation: fadeInDown 1s ease-in-out; /* Banka adı animasyonu */
+}
+
+/* H1 Kartın Sağında */
+.card-design h1 {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+/* Kart Detayları */
+.card-details {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out forwards; /* Kart detayları animasyonu */
+}
+
+.balance-label {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+.balance-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 5px 0;
+  animation: zoomIn 1.2s ease forwards; /* Bakiye animasyonu */
+}
+
+.card-number {
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  font-family: "Courier New", Courier, monospace;
+  animation: slideInLeft 1s ease-in-out; /* Kart numarası animasyonu */
+}
+
+.expiry-date {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 300;
+  animation: slideInRight 1.5s ease-in-out; /* Son kullanma tarihi animasyonu */
+}
+
+/* Kart Logosuna Animasyon */
+.card-logo {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  transform: scale(0);
+  animation: bounceIn 1.5s ease-in-out forwards; /* Logo animasyonu */
+}
+
+.mastercard-logo {
+  width: 50px;
+  height: 50px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/512px-Mastercard-logo.svg.png");
+  background-size: cover;
+  display: block;
+}
+
+/* Balance Ekleme Butonu */
+.add-balance-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #28a745; /* Buton rengi */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-balance-button:hover {
+  background-color: #218838; /* Hover buton rengi */
+  transform: scale(1.05); /* Hoverda büyüme efekti */
+}
+
+.add-balance-button:active {
+  background-color: #1e7e34; /* Aktif buton rengi */
+  transform: scale(0.95); /* Buton basıldığında küçülme efekti */
+}
+
+/* Animasyonlar */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

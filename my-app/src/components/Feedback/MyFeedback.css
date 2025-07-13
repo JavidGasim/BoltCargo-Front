@@ -1,0 +1,147 @@
+/* Main container for the feedback section */
+.another-feedback-container {
+  padding: 20px; /* Padding around the container */
+  margin: 20px auto; /* Centering the container */
+  max-width: 900px; /* Maximum width of the container */
+  background-color: #f0f4f8; /* Light blue-gray background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Shadow effect */
+  border: 2px solid #007bff; /* Blue border */
+  text-align: center; /* Center text alignment */
+}
+
+/* Feedback title */
+.another-feedback-container h2 {
+  font-size: 2rem; /* Font size for title */
+  color: #007bff; /* Bright blue color */
+  margin-bottom: 30px; /* Space below the title */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 1.5px; /* Space between letters */
+}
+
+/* List of feedbacks */
+.feedback-list {
+  display: grid; /* Using CSS grid layout */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive columns */
+  gap: 15px; /* Space between items */
+  padding: 0; /* Remove default padding */
+  list-style-type: none; /* Remove bullet points */
+}
+
+/* Individual feedback item */
+.feedback-item {
+  background-color: #ffffff; /* White background for feedback items */
+  padding: 15px; /* Padding inside feedback items */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animation for hover effect */
+  border-left: 3px solid #007bff; /* Left border color */
+  text-align: left; /* Left-align text */
+  position: relative; /* Position for pseudo-elements */
+}
+
+.feedback-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Name of the person giving feedback */
+.feedback-item h3 {
+  font-size: 1.2rem; /* Font size for names */
+  color: #333333; /* Dark color for text */
+  margin-bottom: 8px; /* Space below names */
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Feedback text */
+.feedback-item p {
+  font-size: 0.9rem; /* Font size for feedback text */
+  color: #555555; /* Gray color for text */
+  line-height: 1.4; /* Space between lines */
+}
+
+/* Decorative element */
+.feedback-item::before {
+  content: "“"; /* Quotation mark for styling */
+  font-size: 3rem; /* Size of the quotation mark */
+  color: #007bff; /* Blue color for the quotation mark */
+  position: absolute; /* Position relative to feedback item */
+  top: -10px; /* Position from the top */
+  left: 10px; /* Position from the left */
+  opacity: 0.2; /* Transparency */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .another-feedback-container {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .feedback-item {
+    padding: 10px; /* Reduced padding for feedback items on small screens */
+  }
+
+  .feedback-item h3 {
+    font-size: 1rem; /* Smaller font size for names */
+  }
+
+  .feedback-item p {
+    font-size: 0.8rem; /* Smaller font size for feedback text */
+  }
+}
+
+/* 
+  .feedback-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+  }
+  
+  .feedback-item:hover {
+    background-color: #f1f1f1;
+  } */
+
+.delete-button {
+  background-color: #d9534f; /* Bootstrap danger color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px; /* Shortened padding */
+  cursor: pointer;
+  font-size: 14px; /* Slightly smaller font size */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+  position: relative; /* For animation effect */
+  overflow: hidden; /* Clip the pseudo-element */
+}
+
+.delete-button:hover {
+  background-color: #c9302c; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.delete-button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.delete-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}

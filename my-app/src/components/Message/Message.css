@@ -1,0 +1,197 @@
+/* Ana Konteyner */
+.message-container {
+  display: flex;
+  height: 100vh;
+  background: #f7f9fc;
+  animation: fadeIn 0.5s ease; /* Added fade-in animation */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  background: #34495e;
+  padding: 20px;
+  overflow-y: auto;
+  animation: slideIn 0.5s ease-out; /* Sidebar slide-in */
+}
+
+/* Chat Items in Sidebar */
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 15px; /* Increased padding for better spacing */
+  margin-bottom: 20px; /* Increased margin between chat items */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-item.active,
+.chat-item:hover {
+  background: #2c3e50;
+}
+
+.avatar {
+  width: 70px; /* Increased avatar size */
+  height: 70px; /* Increased avatar size */
+  border-radius: 50%;
+  margin-right: 20px; /* Increased margin between avatar and text */
+}
+
+.chat-info h4 {
+  margin: 0;
+  color: #ecf0f1;
+  font-size: 1.1em; /* Increased font size for better visibility */
+}
+
+/* Status */
+.status {
+  font-size: 0.9em; /* Slightly bigger font size for better readability */
+  margin-top: 5px;
+}
+
+/* Online status */
+.status.online {
+  color: #2ecc71; /* Green for online status */
+  background-color: #34495e; /* Green for online status */
+}
+
+/* Offline status */
+.status.offline {
+  color: #e74c3c; /* Red for offline status */
+  background-color: #34495e; /* Red for offline status */
+}
+
+/* Chat Alanı (Chat Area) */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: white;
+  animation: fadeIn 0.5s ease; /* Fade-in for chat area */
+  position: relative; /* Make sure input can be positioned at the bottom */
+}
+
+/* Chat Body */
+.chat-body {
+  flex: 1;
+  overflow-y: auto; /* Scrollable chat messages */
+  padding: 10px;
+  margin-bottom: 50px; /* Make space for the input area at the bottom */
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease; /* Fade-in for header */
+}
+
+.header-avatar {
+  width: 80px; /* Increased header avatar size */
+  height: 80px; /* Increased header avatar size */
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  animation: bubbleIn 0.3s ease; /* Added bubble scaling and opacity */
+}
+
+.message.incoming {
+  background: #ecf0f1;
+  color: black;
+  align-self: flex-start; /* Sol tarafa hizalama */
+  border-radius: 15px 15px 0 15px;
+}
+
+.message.outgoing {
+  background: #3498db;
+  color: white;
+  align-self: flex-end; /* Sağ tarafa hizalama */
+  margin-left: auto; /* Sağ tarafa hizalamak için */
+  border-radius: 15px 15px 0 15px;
+}
+
+.time {
+  font-size: 0.8em;
+  margin-top: 5px;
+  opacity: 0.6;
+}
+
+/* Giriş Alanı (Input Area) */
+.chat-input {
+  display: flex;
+  position: sticky;
+  bottom: 0;
+  background-color: white; /* Keep the input area visible */
+  padding: 10px 20px;
+  animation: fadeIn 0.5s ease; /* Fade-in for input area */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for the input area */
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.chat-input input:focus {
+  transform: scale(1.05); /* Slight scaling effect on focus */
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease; /* Added scaling effect */
+}
+
+.chat-input button:hover {
+  background: #2980b9;
+  transform: scale(1.1); /* Scaling effect on hover */
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bubbleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

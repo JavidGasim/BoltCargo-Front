@@ -1,0 +1,132 @@
+/* Genel Arka Plan */
+.balance-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 40px 20px; */
+  background-color: #eef3f7;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Başlık Stili */
+.balance-heading {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Kart Stili */
+.balance-card {
+  background: linear-gradient(145deg, #ffffff, #d7e0e5);
+  border-radius: 20px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), inset 0 0 15px rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  max-width: 500px;
+  width: 100%;
+  animation: popUp 0.8s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.balance-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Liste Stili */
+.balance-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Liste Öğesi Stili */
+.balance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  margin-bottom: 15px; /* Burada 15px boşluk eklendi */
+  animation: slideIn 0.6s ease forwards;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.balance-item:hover {
+  transform: translateX(5px);
+  background: rgba(240, 248, 255, 0.8);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiket ve Değer Stili */
+.balance-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.balance-value {
+  font-size: 1.3rem;
+  margin: 0px 25px 0px 0px;
+  font-weight: bold;
+  color: #2ecc71;
+  transition: color 0.3s ease;
+}
+
+.balance-item:hover .balance-value {
+  color: #27ae60;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 600px) {
+  .balance-card {
+    padding: 20px 30px;
+  }
+
+  .balance-heading {
+    font-size: 2rem;
+  }
+
+  .balance-value {
+    font-size: 1.2rem;
+  }
+}

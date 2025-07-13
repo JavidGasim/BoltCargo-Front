@@ -1,0 +1,230 @@
+/* Container Card */
+.add-order-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.add-order-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Style */
+.add-order-heading {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  animation: slideInDown 0.6s ease-out;
+}
+
+/* Image Upload Section */
+.upload-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image-upload-label {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.image-upload-label:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.add-order-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  animation: zoomIn 0.8s ease-in-out;
+}
+
+.add-order-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.add-order-image:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Form Fields */
+.add-order-info {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.add-order-label {
+  color: #666;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.add-order-input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.add-order-input:focus {
+  box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.6);
+  transform: scale(1.03);
+}
+
+/* Price Fields - UL and LI Structure */
+.price-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  background: #fdfdfd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.price-list:hover {
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.price-item:hover {
+  background-color: #f9f9f9;
+}
+
+.price-label {
+  color: #666;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.price-value {
+  font-weight: bold;
+  color: #333;
+  font-size: 1em;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #eef5ed;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.price-value:hover {
+  background-color: #d7e9da;
+  transform: scale(1.05);
+}
+
+/* Save Button */
+.save-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+
+.icon {
+    font-size: 2.5em;
+    cursor: pointer;
+    color: black;
+}
+
+
+.icon:hover{
+    cursor: scroll;
+    color: red;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

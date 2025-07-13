@@ -1,0 +1,92 @@
+.complaints-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.complaints-title {
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.complaints-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive columns */
+  gap: 20px; /* Space between cards */
+  width: 100%;
+  max-width: 1200px; /* Limit grid width */
+  margin: 0 auto;
+}
+
+.complaint-card {
+  background-color: white; /* Semi-transparent white background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sender {
+  border-bottom: 2px solid gold; /* Differentiates sender */
+  padding-bottom: 10px;
+}
+
+.receiver {
+  border-top: 2px solid gold; /* Differentiates receiver */
+  padding-top: 10px;
+}
+
+.user-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.user-role {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.complaint-content {
+  margin: 10px 0;
+}
+
+.complaint-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.complaint-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.complaint-footer {
+  font-size: 0.8em;
+  text-align: right;
+  color: #777;
+}
+
+.complaint-date {
+  font-style: italic;
+}

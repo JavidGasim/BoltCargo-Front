@@ -1,0 +1,213 @@
+/* General container for the profile page */
+.profile-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile header styling */
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Form styling */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: formFadeIn 0.8s ease-in-out;
+}
+
+/* Form elements' labels */
+.profile-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Form input fields */
+.profile-form input,
+.profile-form select {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus effect for input fields */
+.profile-form input:focus,
+.profile-form select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Profile image preview */
+.image-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.image-preview img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.image-preview img:hover {
+  transform: scale(1.05);
+}
+
+/* Upload input for file selection */
+.upload-input {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Save button styling */
+.save-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.save-button:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Additional styling for Driver role car type selection */
+.profile-form select {
+  background-color: #f9f9f9;
+}
+
+/* Container for larger, modern design */
+.profile-container-large {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.profile-details {
+  flex: 2;
+}
+
+.profile-image-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-upload-button {
+  background-color: #007bff;
+  color: white;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.image-upload-button:hover {
+  background-color: #0056b3;
+}
+
+.password-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.toggle-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 16px;
+}
+
+.toggle-button.active {
+  background-color: #f44336;
+}
+
+.toggle-button:hover {
+  transform: scale(1.05);
+}
+
+.password-input-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.password-input-container input {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.password-input-container.slide-in input {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.password-input-container.slide-out input {
+  opacity: 0;
+  transform: translateX(100%);
+}

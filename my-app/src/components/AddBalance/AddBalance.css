@@ -1,0 +1,116 @@
+/* Genel container */
+.add-balance-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6b8dff, #a0c4ff);
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Form container */
+.form-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Başlık */
+.header-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  animation: fadeInHeader 1.5s ease-out;
+}
+
+/* Form elemanları */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  background: #f8f8f8;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6b8dff;
+  background: #e8efff;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(135deg, #6b8dff, #a0c4ff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #a0c4ff, #6b8dff);
+  transform: translateY(-3px);
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+/* Go Back Button */
+.go-back {
+  font-size: 1rem;
+  color: #6b8dff;
+  margin-top: 15px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.3s ease;
+}
+
+.go-back:hover {
+  color: #4a72d1;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInHeader {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

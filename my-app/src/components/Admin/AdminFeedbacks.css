@@ -1,0 +1,92 @@
+/* Main container for the feedback section */
+.another-feedback-container {
+    padding: 20px; /* Reduced padding */
+    margin: 20px auto; /* Reduced margin */
+    max-width: 900px; /* Reduced max-width */
+    background-color: #f0f4f8; /* Light blue-gray background */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid #007bff; /* Blue border */
+    text-align: center;
+  }
+  
+  /* Feedback title */
+  .another-feedback-container h2 {
+    font-size: 2rem; /* Smaller title font size */
+    color: #007bff; /* Bright blue color */
+    margin-bottom: 30px; /* Reduced margin */
+    text-transform: uppercase; /* All caps */
+    letter-spacing: 1.5px;
+  }
+  
+  /* List of feedbacks */
+  .feedback-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Further reduced min-width */
+    gap: 15px; /* Reduced gap */
+    padding: 0; /* Remove default ul padding */
+    list-style-type: none; /* Remove bullet points */
+  }
+  
+  /* Individual feedback item */
+  .feedback-item {
+    background-color: #ffffff; /* White background */
+    padding: 15px; /* Further reduced padding */
+    border-radius: 10px; /* Reduced border-radius */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 3px solid #007bff; /* Smaller left border */
+    text-align: left;
+    position: relative; /* Allows for more creative designs */
+  }
+  
+  .feedback-item:hover {
+    transform: translateY(-5px); /* Smaller lift effect */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Name of the person giving feedback */
+  .feedback-item h3 {
+    font-size: 1.2rem; /* Smaller font size */
+    color: #333333;
+    margin-bottom: 8px; /* Reduced margin */
+    font-weight: bold;
+  }
+  
+  /* Feedback text */
+  .feedback-item p {
+    font-size: 0.9rem; /* Smaller font size */
+    color: #555555;
+    line-height: 1.4; /* Reduced line height */
+  }
+  
+  /* Decorative element */
+  .feedback-item::before {
+    content: '“'; /* Quotation mark for styling */
+    font-size: 3rem; /* Smaller quotation mark */
+    color: #007bff;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.2;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .another-feedback-container {
+      padding: 15px; /* Further reduced padding for smaller screens */
+    }
+    
+    .feedback-item {
+      padding: 10px; /* Further reduced padding for smaller screens */
+    }
+    
+    .feedback-item h3 {
+      font-size: 1rem; /* Reduced font size */
+    }
+    
+    .feedback-item p {
+      font-size: 0.8rem; /* Reduced font size */
+    }
+  }
+  

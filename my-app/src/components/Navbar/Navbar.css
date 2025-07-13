@@ -1,0 +1,178 @@
+/* Navbar */
+.navbar {
+  background-color: #060b26;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  animation: slideInFromTop 0.5s ease-out; /* Navbar slide in */
+}
+
+/* Menu bars icon */
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  animation: bounceIn 1.5s infinite alternate; /* Bounce effect */
+}
+
+.menu-bars:hover {
+  transform: scale(1.3) rotate(20deg); /* Larger scaling with slight rotation */
+}
+
+/* Sidebar */
+.nav-menu {
+  background-color: #060b26;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: left 850ms ease;
+  animation: slideInFromLeft 0.85s forwards; /* Slide in from left */
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: left 350ms ease;
+}
+
+/* Navigation items */
+.nav-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0; /* Standard padding for top and bottom */
+  list-style: none;
+  height: 60px;
+  margin-left: -50px; /* Moves the item 16px to the left */
+  animation: fadeInUp 1s forwards; /* Fade and move up animation */
+}
+
+.nav-text:nth-child(1) {
+  animation-delay: 0.2s; /* Delay for the first item */
+}
+.nav-text:nth-child(2) {
+  animation-delay: 0.4s; /* Delay for the second item */
+}
+.nav-text:nth-child(3) {
+  animation-delay: 0.6s; /* Delay for the third item */
+}
+.nav-text:nth-child(4) {
+  animation-delay: 0.8s; /* Delay for the fourth item */
+}
+
+/* Links inside navigation */
+.nav-text a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-text a:hover {
+  background-color: #1a83ff;
+  transform: translateX(15px) scale(1.1); /* Move more to the right and scale */
+}
+
+/* Container for all menu items */
+.nav-menu-items {
+  width: 50%;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Navbar toggle */
+.navbar-toggle {
+  background-color: #060b26;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  margin-left: -70px;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+/* Feedback.css */
+
+/* Other styles remain the same */
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(0, 150, 136, 0.3);
+}
+
+/* Rest of the CSS remains unchanged */
+
+/* Slide-in from top animation for the navbar */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in from left animation for the sidebar */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Bounce-in animation for the menu icon */
+@keyframes bounceIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1) translateY(-5px);
+  }
+}
+
+/* Fade in and move up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

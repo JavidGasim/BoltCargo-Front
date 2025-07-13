@@ -1,0 +1,63 @@
+/* Temel ayarlar */
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, greenyellow, mediumpurple);
+  background-size: 300% 300%;
+  animation: background-shift 6s ease infinite;
+  color: white;
+}
+
+@keyframes background-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rating-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 450px;
+  text-align: center;
+}
+
+.rating-header h3,
+.rating-header p,
+.rating-stats h4,
+.rating-stats p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2.5rem; /* Yıldız boyutunu belirle */
+}
+
+.rating-average {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  transform: scale(0.8);
+}
+
+.rating-average.visible {
+  opacity: 1;
+  transform: scale(1);
+}
