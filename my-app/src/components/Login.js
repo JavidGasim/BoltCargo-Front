@@ -125,6 +125,54 @@ const Login = () => {
     }
   }, [role]);
 
+  const [enteredUser, setEnteredUser] = useState({});
+  const GetUserByName = () => {
+    console.log(data.username);
+
+    var name = data.username;
+
+    // var url = generalUrl + "GetByUserName/" + data.username;
+    var url = generalUrl + "GetByUserName/";
+    axios
+      .get(url, {
+        params: {
+          // data.username
+          // name: data.username,
+          // name,
+          username: name,
+        },
+      })
+      .then((response) => {
+        setEnteredUser(response.data);
+
+        console.log(response.data);
+
+        if (response.data) {
+          // navigate("/checkCode", { state: { data: response.data.email } });
+          SendCode(response.data.email);
+        }
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+  };
+
+  const SendCode = async (email) => {
+    var url =
+      "https://localhost:5000/api/v1/" +
+      `Email/emailVerificationCode?email=${email}`;
+    await axios
+      .post(url)
+      .then((response) => {
+        Cookies.set("code", response.data.code, { expires: 30 });
+        navigate("/checkCode", { state: { data } });
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+        alert(error.response.data.message);
+      });
+  };
+
   return (
     <div
       className={styles.container}
@@ -140,7 +188,7 @@ const Login = () => {
       }}
     >
       <form
-      style={{marginTop: "-100px"}}
+        style={{ marginTop: "-100px" }}
         className={styles.formLogin}
         onSubmit={submitHandler}
         autoComplete="off"
@@ -207,7 +255,16 @@ const Login = () => {
             }}
           />
         </div>
-
+        <span
+          style={{
+            color: "#a29494",
+            textAlign: "center",
+            display: "block",
+            marginTop: "10px",
+          }}
+        >
+          Forgot Password? <Link onClick={GetUserByName}>Reset password</Link>
+        </span>
         <button
           type="submit"
           style={{

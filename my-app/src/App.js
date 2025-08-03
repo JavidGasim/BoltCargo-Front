@@ -45,6 +45,7 @@ import CheckCode from "./components/CheckCode/CheckCode";
 import CheckCodeAdmin from "./components/CheckCode/CheckCodeAdmin";
 import CheckCodeDriver from "./components/CheckCode/CheckCodeDriver";
 import Rating from "./components/Rating/Rating";
+import CheckCodeResetPassword from "./components/CheckCode/CheckCodeResetPassword";
 
 function App() {
   return (
@@ -89,6 +90,10 @@ function App() {
           <Route path="/checkCode" element={<CheckCode />} />
           <Route path="/checkCodeAdmin" element={<CheckCodeAdmin />} />
           <Route path="/checkCodeDriver" element={<CheckCodeDriver />} />
+          <Route
+            path="/checkCodeResetPassword"
+            element={<CheckCodeResetPassword />}
+          />
           <Route path="/rating" element={<Rating />} />
 
           <Route path="/" element={<Navigate to="/login" />} />
