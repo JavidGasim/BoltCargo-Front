@@ -1,0 +1,236 @@
+.mainpageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../../public/mainpagebg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 55;
+}
+
+.mainpageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 150px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.headerLogo {
+  width: 300px;
+  height: 150px;
+  display: flex;
+}
+
+.headerLogo img {
+  width: 50%;
+  height: 100%;
+}
+
+.headerLogo h1 {
+  margin: auto;
+  margin-left: 20px;
+  font-size: 30px;
+  text-align: left;
+  text-decoration: solid;
+  color: #00cca6;
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.headerButtons button {
+  padding: 10px 20px;
+  background-color: #00cca6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.mainpageMain {
+  /* flex-grow: 1; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  animation: slideUp 0.8s ease-in-out;
+  margin: 0;
+}
+
+.mainpageMain h1 {
+  font-size: 4.5em;
+  width: 650px;
+  padding: 50px;
+  padding-top: 20px;
+  /* height: 245px; */
+  /* margin-bottom: 50px; */
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.mainpageMain p {
+  font-size: 1.5em;
+  width: 650px;
+  /* height: 245px; */
+  /* margin-bottom: 20px; */
+  color: white;
+  /* font-weight: bolder; */
+  text-align: center;
+  animation: slideUp 0.8s ease-in-out;
+  /* margin-bottom: 50px; */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mainpageCardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  animation: slideUp 0.8s ease-in-out;
+  margin: 0;
+  gap: 20px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+.mainpageCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  animation: slideUp 0.8s ease-in-out;
+  margin: 0;
+  padding: 50px 0px;
+  background-color: white;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mainpageCard img {
+  width: 150px;
+  height: 150px;
+}
+
+.mainpageCard p {
+  font-size: 1.2em;
+  width: 250px;
+  /* height: 245px; */
+  /* margin-bottom: 20px; */
+  color: black;
+  /* font-weight: bolder; */
+  text-align: center;
+  animation: slideUp 0.8s ease-in-out;
+  /* margin-bottom: 50px; */
+}
+
+.mainpageFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 150px;
+  background-color: #252b42;
+  color: #fff;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.mainpageFooterLeftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+  font-size: 20px;
+  width: 50%;
+  margin-right: 20px;
+}
+
+.mainpageFooterLeftSide div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.mainoageFooterLeftSide h1 {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  font-size: 30px;
+}
+
+.mainpageFooterLeftSide p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+}
+
+.mainpageFooterRightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  text-align: right;
+  gap: 20px;
+  font-size: 20px;
+  width: 50%;
+  margin: auto;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+.mainpageFooterRightSide button {
+  margin: auto;
+  padding: 20px 30px;
+  background-color: #00cca6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 15px;
+  width: 30%;
+  text-align: center;
+  margin-right: 0px;
+  margin-top: 20px;
+}
+
+.circle-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #00cca6; /* Arxa fon rəngi */
+  color: white; /* Emoji rəngi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Dairəvi form */
+  font-size: 20px;
+}

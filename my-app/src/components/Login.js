@@ -153,6 +153,7 @@ const Login = () => {
         }
       })
       .catch((error) => {
+        toast.error("User not found");
         console.log(error.response.data.message);
       });
   };
@@ -165,7 +166,10 @@ const Login = () => {
       .post(url)
       .then((response) => {
         Cookies.set("code", response.data.code, { expires: 30 });
-        navigate("/checkCode", { state: { data } });
+        Cookies.set("email", email, { expires: 30 });
+        Cookies.set("username", data.username, { expires: 30 });
+
+        navigate("/checkCodeResetPassword", { state: { data } });
       })
       .catch((error) => {
         console.log(error.response.data.message);
