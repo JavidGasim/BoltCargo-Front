@@ -14,7 +14,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios, { toFormData } from "axios";
 import Cookies from "js-cookie";
 import { HubConnectionBuilder } from "@microsoft/signalr";
-import backgroundImage from "../img/signup.webp";
+// import backgroundImage from "../img/signup.webp";
+// import backgroundImage from "../../public/mainpagebg.png";
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -349,7 +350,7 @@ const SignUp = () => {
     <div
       className={styles.container}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için
@@ -361,10 +362,17 @@ const SignUp = () => {
     >
       <form
         onSubmit={submitHandler}
-        className={styles.formLogin}
+        // className={styles.formLogin}
+        className="loginForm"
         autoComplete="off"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <h2>Sign Up</h2>
+        <h2 style={{ color: "white" }}>Sign Up</h2>
         <div style={{ marginLeft: "35%", marginBottom: "20px" }}>
           {previewUrl && (
             <img
@@ -429,7 +437,7 @@ const SignUp = () => {
               type="text"
               name="userName"
               value={data.userName}
-              placeholder="User Name"
+              placeholder="Username"
               onChange={changeHandler}
               onFocus={focusHandler}
               autoComplete="off"
@@ -437,6 +445,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "15px",
               }}
             />
           </div>
@@ -480,6 +489,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -515,7 +525,7 @@ const SignUp = () => {
               type="text"
               name="surName"
               value={data.surName}
-              placeholder="SurName"
+              placeholder="Surname"
               onChange={changeHandler}
               onFocus={focusHandler}
               autoComplete="off"
@@ -523,6 +533,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -566,6 +577,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -609,6 +621,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -652,6 +665,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -696,6 +710,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -739,6 +754,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
+                marginTop: "7px",
               }}
             />
           </div>
@@ -816,7 +832,7 @@ const SignUp = () => {
                 paddingLeft: "30px",
                 padding: "8px",
                 width: "100%",
-                marginTop: "15px",
+                marginTop: "7px",
               }}
               placeholder=""
             />
@@ -831,7 +847,7 @@ const SignUp = () => {
             gap: "20px",
           }}
         >
-          <label>
+          <label style={{ color: "white" }}>
             <input
               type="radio"
               name="role"
@@ -841,7 +857,7 @@ const SignUp = () => {
             />
             Driver
           </label>
-          <label>
+          <label style={{ color: "white" }}>
             <input
               type="radio"
               name="role"
@@ -853,7 +869,7 @@ const SignUp = () => {
           </label>
         </div>
 
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <button
             type="submit"
             style={{
@@ -861,19 +877,23 @@ const SignUp = () => {
               width: "100%",
               margin: "20px auto",
               padding: "10px",
+              backgroundColor: "#00cca6",
             }}
           >
             Create Account
           </button>
           <span
             style={{
-              color: "#a29494",
+              color: "white",
               textAlign: "center",
               display: "inline-block",
               width: "100%",
             }}
           >
-            Already have an account? <Link to="/login">Sign In</Link>
+            Already have an account?{" "}
+            <Link to="/login" style={{ color: "#00cca6" }}>
+              Sign In
+            </Link>
           </span>
         </div>
       </form>

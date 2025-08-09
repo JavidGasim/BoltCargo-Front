@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import usernameIcon from "../img/user.png";
 import passwordIcon from "../img/password.png";
-import styles from "./SignUp.module.css";
+// import styles from "./SignUp.module.css";
+import "./Login.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notify } from "./toast";
@@ -178,119 +179,135 @@ const Login = () => {
   };
 
   return (
-    <div
-      className={styles.container}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        //Arkaplanın tam sığmasını sağlamak için
-        backgroundPosition: "center", // Arkaplanı ortalamak için
-        backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
-        height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
-        width: "100vw", // Genişlik tüm ekranı kaplar
-        overflow: "auto", // İçeriğin kaydırılmasını sağlar
-      }}
-    >
-      <form
-        style={{ marginTop: "-100px" }}
-        className={styles.formLogin}
-        onSubmit={submitHandler}
-        autoComplete="off"
-      >
-        <h2>Sign In</h2>
-
-        <div
-          style={{ position: "relative", maxWidth: "300px", margin: "0 auto" }}
-        >
-          <input
-            type="text" // Change input type to text
-            name="username" // Change to username
-            value={data.username} // Change to username state
-            placeholder="Username" // Change placeholder to Username
-            onChange={changeHandler}
-            onFocus={focusHandler}
-            required
-            autoComplete="off"
-            style={{ width: "100%", padding: "8px" }}
-          />
+    <div className="loginContainer">
+      <form onSubmit={submitHandler} className="loginForm" autoComplete="off">
+        {/* <div>
           <img
-            src={usernameIcon} // Change icon to username icon
-            alt="Username"
+            src="./loginimg.png"
+            alt="Logo"
+            className="logo"
             style={{
-              position: "absolute",
-              right: "10px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              width: "20px",
-              height: "20px",
+              width: "90%",
+              height: "100%",
+              borderTopLeftRadius: "10px",
+              borderBottomLeftRadius: "10px",
             }}
           />
-        </div>
+        </div> */}
+        <div style={{ width: "30%", margin: "auto" }}>
+          <h2 style={{ textAlign: "center", color: "white" }}>Sign In</h2>
 
-        <div
-          style={{
-            position: "relative",
-            maxWidth: "300px",
-            margin: "20px auto 0",
-          }}
-        >
-          <input
-            type="password"
-            name="password"
-            value={data.password}
-            placeholder="Password"
-            onChange={changeHandler}
-            onFocus={focusHandler}
-            required
-            autoComplete="off"
-            minLength={8}
-            style={{ width: "100%", padding: "8px" }}
-          />
-          <img
-            src={passwordIcon}
-            alt="Password"
+          <div
             style={{
-              position: "absolute",
-              right: "10px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              width: "20px",
-              height: "20px",
+              position: "relative",
+              maxWidth: "300px",
+              margin: "0 auto",
             }}
-          />
-        </div>
-        <span
-          style={{
-            color: "#a29494",
-            textAlign: "center",
-            display: "block",
-            marginTop: "10px",
-          }}
-        >
-          Forgot Password? <Link onClick={GetUserByName}>Reset password</Link>
-        </span>
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            maxWidth: "300px",
-            margin: "20px auto",
-            padding: "10px",
-          }}
-        >
-          Login
-        </button>
+          >
+            <input
+              type="text" // Change input type to text
+              name="username" // Change to username
+              value={data.username} // Change to username state
+              placeholder="Username" // Change placeholder to Username
+              onChange={changeHandler}
+              onFocus={focusHandler}
+              required
+              autoComplete="off"
+              style={{ width: "100%", padding: "8px" }}
+            />
+            <img
+              src={usernameIcon} // Change icon to username icon
+              alt="Username"
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: "20px",
+                height: "20px",
+              }}
+            />
+          </div>
 
-        <span
-          style={{
-            color: "#a29494",
-            textAlign: "center",
-            display: "block",
-            marginTop: "10px",
-          }}
-        >
-          Don't have an account? <Link to="/signup">Create account</Link>
-        </span>
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "300px",
+              margin: "20px auto 0",
+            }}
+          >
+            <input
+              type="password"
+              name="password"
+              value={data.password}
+              placeholder="Password"
+              onChange={changeHandler}
+              onFocus={focusHandler}
+              required
+              autoComplete="off"
+              minLength={8}
+              style={{ width: "100%", padding: "8px" }}
+            />
+            <img
+              src={passwordIcon}
+              alt="Password"
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: "20px",
+                height: "20px",
+              }}
+            />
+          </div>
+          <span
+            style={{
+              color: "white",
+              textAlign: "center",
+              display: "block",
+              marginTop: "10px",
+            }}
+          >
+            Forgot Password? <br />
+            <Link
+              onClick={GetUserByName}
+              style={{ cursor: "pointer", color: "#00cca6" }}
+            >
+              Reset password
+            </Link>
+          </span>
+          <button
+            type="submit"
+            style={{
+              width: "105%",
+              maxWidth: "360px",
+              margin: "20px auto",
+              padding: "10px",
+              backgroundColor: "#00cca6",
+              color: "black",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            Login
+          </button>
+
+          <span
+            style={{
+              color: "white",
+              textAlign: "center",
+              display: "block",
+              marginTop: "10px",
+            }}
+          >
+            Don't have an account?{" "}
+            <Link to="/signup" style={{ cursor: "pointer", color: "#00cca6" }}>
+              Create account
+            </Link>
+          </span>
+        </div>
       </form>
 
       <ToastContainer />

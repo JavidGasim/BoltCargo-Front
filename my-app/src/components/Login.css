@@ -1,0 +1,26 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../public/mainpagebg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 55;
+}
+
+.loginForm {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* background-color: rgb(34, 34, 34); */
+  background-color: rgba(0, 0, 0, 0.4); /* yalnız arxa fon şəffaf olur */
+  padding: 10px 0px;
+  width: 30%;
+  height: 80%;
+  margin: auto;
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+}

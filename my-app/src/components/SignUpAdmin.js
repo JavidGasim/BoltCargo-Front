@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { generatePath, Link } from "react-router-dom";
-import styles from "./DriverPage.module.css";
+// import styles from "./DriverPage.module.css";
+import styles from "./SignUp.module.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { HubConnectionBuilder } from "@microsoft/signalr";
@@ -286,7 +287,7 @@ const SignUpAdmin = () => {
     <div
       className={styles.container}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için
@@ -296,8 +297,18 @@ const SignUpAdmin = () => {
         overflow: "auto", // İçeriğin kaydırılmasını sağlar
       }}
     >
-      <form onSubmit={submitHandler} className={styles.form}>
-        <h2>Admin Sign Up</h2>
+      <form
+        onSubmit={submitHandler}
+        className="loginForm"
+        autoComplete="off"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <h2 style={{ color: "white", textAlign: "center" }}>Admin Sign Up</h2>
 
         <div style={{ marginLeft: "30%", marginBottom: "20px" }}>
           {previewUrl && (
@@ -314,74 +325,96 @@ const SignUpAdmin = () => {
           )}
         </div>
         <div className={styles.formGroup}>
-          <label>Image</label>
           <input type="file" accept="image/*" onChange={handleFileChange} />
         </div>
 
         <div className={styles.formGroup}>
-          <label>User Name</label>
           <input
             type="text"
             name="userName"
             value={adminData.userName}
             onChange={handleChange}
-            placeholder="User Name"
+            placeholder="Username"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+              marginTop: "15px",
+            }}
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Name</label>
           <input
             type="text"
             name="name"
             value={adminData.name}
             onChange={handleChange}
             placeholder="Name"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+              marginTop: "15px",
+            }}
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Surname</label>
           <input
             type="text"
             name="surName"
             value={adminData.surName}
             onChange={handleChange}
             placeholder="Surname"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+              marginTop: "15px",
+            }}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Email</label>
           <input
             type="email"
             name="email"
             value={adminData.email}
             onChange={handleChange}
             placeholder="Email"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+              marginTop: "15px",
+            }}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Password</label>
           <input
             type="password"
             name="password"
             value={adminData.password}
             onChange={handleChange}
             placeholder="Password"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+              marginTop: "15px",
+            }}
           />
         </div>
 
         <div
           className={styles.formGroup}
           style={{
-            maxWidth: "315px",
+            maxWidth: "300px",
             margin: "0 auto",
-            marginLeft: "125px",
             marginBottom: "15px",
             position: "relative",
           }}
         >
-          <label>Phone Number</label>
           <input
             type="text"
             name="phoneNumber"
@@ -435,33 +468,48 @@ const SignUpAdmin = () => {
               paddingLeft: "30px",
               padding: "8px",
               width: "100%",
-              // marginTop: "15px",
-              marginBottom: "15px",
-              paddingBottom: "10px",
-              paddingTop: "10px",
-              fontSize: "1.2em",
+              marginTop: "15px",
             }}
             placeholder=""
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Secret Key</label>
           <input
             type="password"
             name="secretKey"
             value={adminData.secretKey}
             onChange={handleChange}
             placeholder="SecretKey"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+              marginTop: "15px",
+            }}
           />
         </div>
 
-        <button type="submit" className={styles.submitButton}>
+        <button
+          type="submit"
+          style={{
+            maxWidth: "300px",
+            width: "100%",
+            margin: "20px auto",
+            padding: "10px",
+            backgroundColor: "#00cca6",
+            borderRadius: "5px",
+          }}
+        >
           Sign Up
         </button>
 
-        <div className={styles.backLink}>
-          <Link to="/signup" id="backToSignUp">
+        <div style={{ textAlign: "center" }}>
+          <span style={{ color: "white" }}>
+            Do you want to register as a client?
+          </span>
+          <br />
+          <Link to="/signup" style={{ color: "#00cca6" }} id="backToSignUp">
             Back to Sign Up
           </Link>
         </div>

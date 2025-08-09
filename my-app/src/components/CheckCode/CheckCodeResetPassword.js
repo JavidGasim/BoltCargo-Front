@@ -111,7 +111,19 @@ const CheckCodeResetPassword = () => {
   }
 
   return (
-    <div className="check-code-container">
+    <div
+      className="check-code-container"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
+        backgroundSize: "cover",
+        //Arkaplanın tam sığmasını sağlamak için
+        backgroundPosition: "center", // Arkaplanı ortalamak için
+        backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
+        height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
+        width: "100vw", // Genişlik tüm ekranı kaplar
+        overflow: "auto", // İçeriğin kaydırılmasını sağlar
+      }}
+    >
       {/* <div className="check-code-box">
         <h1 style={{ color: "white", marginTop: "-10px" }}>EMAIL CODE</h1>
         <input
@@ -127,7 +139,17 @@ const CheckCodeResetPassword = () => {
       </div> */}
 
       {checkMail ? (
-        <div className="check-code-box">
+        <div
+          className="loginForm"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "40%",
+          }}
+        >
           <h1 style={{ color: "white", marginTop: "-10px" }}>RESET PASSWORD</h1>
           <input
             type="password"
@@ -135,6 +157,7 @@ const CheckCodeResetPassword = () => {
             onChange={(e) => setNewPassword(e.target.value)}
             placeholder="Enter new password"
             className="check-code-input"
+            style={{ width: "300px" }}
           />
           <input
             type="password"
@@ -142,13 +165,28 @@ const CheckCodeResetPassword = () => {
             onChange={(e) => setNewPasswordRepeat(e.target.value)}
             placeholder="Repeat new password"
             className="check-code-input"
+            style={{ width: "300px" }}
           />
-          <button onClick={handleButtonClick} className="check-code-button">
+          <button
+            onClick={handleButtonClick}
+            className="check-code-button"
+            style={{ backgroundColor: "#00cca6" }}
+          >
             Reset Password
           </button>
         </div>
       ) : (
-        <div className="check-code-box">
+        <div
+          className="loginForm"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "40%",
+          }}
+        >
           <h1 style={{ color: "white", marginTop: "-10px" }}>EMAIL CODE</h1>
           <input
             type="text"
@@ -156,8 +194,13 @@ const CheckCodeResetPassword = () => {
             onChange={handleInputChange}
             placeholder="Enter code"
             className="check-code-input"
+            style={{ width: "300px" }}
           />
-          <button onClick={handleButtonClick} className="check-code-button">
+          <button
+            onClick={handleButtonClick}
+            className="check-code-button"
+            style={{ backgroundColor: "#00cca6" }}
+          >
             Check Code
           </button>
         </div>

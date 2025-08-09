@@ -63,7 +63,17 @@ const CheckCodeDriver = () => {
 
   return (
     <div className="check-code-container">
-      <div className="check-code-box">
+      <div
+        className="loginForm"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignContent: "center",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "40%",
+        }}
+      >
         <h1 style={{ color: "white", marginTop: "-10px" }}>EMAIL CODE</h1>
         <input
           type="text"
@@ -71,8 +81,13 @@ const CheckCodeDriver = () => {
           onChange={handleInputChange}
           placeholder="Enter code"
           className="check-code-input"
+          style={{ width: "300px" }}
         />
-        <button onClick={handleButtonClick} className="check-code-button">
+        <button
+          onClick={handleButtonClick}
+          className="check-code-button"
+          style={{ backgroundColor: "#00cca6" }}
+        >
           Check Code
         </button>
       </div>
