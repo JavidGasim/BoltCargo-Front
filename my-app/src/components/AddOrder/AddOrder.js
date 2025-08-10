@@ -322,10 +322,21 @@ const AddOrder = ({
   return (
     <>
       <div
-        className="add-order-card animate-fade-in"
-        style={{ marginTop: "40px" }}
+        // className="add-order-card animate-fade-in"
+        className="loginForm"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "40px",
+        }}
       >
-        <h2 className="add-order-heading animate-heading">Add Order</h2>
+        <h2
+          className="add-order-heading animate-heading"
+          style={{ color: "white" }}
+        >
+          Add Order
+        </h2>
 
         <div className="upload-section animate-slide-up">
           <input
@@ -360,7 +371,9 @@ const AddOrder = ({
             value={carType}
             onChange={(e) => setCarType(e.target.value)}
             /> */}
-          <label className="add-order-label">Car Type</label>
+          <label className="add-order-label" style={{ color: "white" }}>
+            Car Type
+          </label>
           <select
             className="add-order-input"
             name="carType"
@@ -376,12 +389,15 @@ const AddOrder = ({
         </div>
 
         <div className="add-order-info animate-slide-up">
-          <label className="add-order-label">Message:</label>
+          <label className="add-order-label" style={{ color: "white" }}>
+            Message:
+          </label>
           <input
             type="text"
             className="add-order-input"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            placeholder="Message"
           />
         </div>
 
@@ -407,7 +423,9 @@ const AddOrder = ({
         </div> */}
 
         <div>
-          <label className="add-order-label">Current Location:</label>
+          <label className="add-order-label" style={{ color: "white" }}>
+            Current Location:
+          </label>
           <input
             type="text"
             className="add-order-input"
@@ -450,7 +468,10 @@ const AddOrder = ({
             </div>
           )}
 
-          <label className="add-order-label" style={{ marginTop: "30px" }}>
+          <label
+            className="add-order-label"
+            style={{ marginTop: "30px", color: "white" }}
+          >
             Destination:
           </label>
           <input
@@ -515,7 +536,11 @@ const AddOrder = ({
 
         {/* Save Button */}
         <div className="add-order-info animate-slide-up">
-          <button className="save-button" onClick={handleSave}>
+          <button
+            className="save-button"
+            onClick={handleSave}
+            style={{ backgroundColor: "#00cca6", color: "white" }}
+          >
             Add Order
           </button>
         </div>
