@@ -122,23 +122,32 @@ const SignUp = () => {
 
   const changeHandler = (event) => {
     const { name, value, type, checked } = event.target;
+    let newData;
 
     if (type == "checkbox") {
-      setData({ ...data, [name]: checked });
+      newData = { ...data, [name]: checked };
     } else {
       if (name == "name" || name == "surName") {
         const lettersOnlyRegex = /^[a-zA-ZğüşöçıəĞÜŞÖÇİƏ ]*$/;
         if (lettersOnlyRegex.test(value)) {
-          setData({ ...data, [name]: value });
+          newData = { ...data, [name]: value };
+        } else {
+          return; // düzgün olmayan simvol yazılarsa dayandırırıq
         }
       } else {
-        setData({ ...data, [name]: value });
+        newData = { ...data, [name]: value };
 
         if (name == "role" && value == "driver") {
           navigate("/signUpDriver");
         }
       }
     }
+
+    // State yenilə
+    setData(newData);
+
+    // Cookie-yə yaz (7 gün qalacaq)
+    Cookies.set("signupData", JSON.stringify(newData), { expires: 7 });
   };
 
   const handleCardNumberChange = (e) => {
@@ -345,6 +354,13 @@ const SignUp = () => {
     setPhoneNumber(value);
     setIsValid(phoneRegex.test(value));
   };
+
+  useEffect(() => {
+    const savedData = Cookies.get("signupData");
+    if (savedData) {
+      setData(JSON.parse(savedData));
+    }
+  }, []);
 
   return (
     <div

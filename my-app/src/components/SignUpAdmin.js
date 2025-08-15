@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { generatePath, Link } from "react-router-dom";
@@ -93,18 +93,24 @@ const SignUpAdmin = () => {
 
     const lettersOnlyRegex = /^[a-zA-ZğüşöçıəĞÜŞÖÇİƏ ]*$/;
 
-    if (name == "name" || name == "surName") {
+    let newAdminData;
+
+    if (name === "name" || name === "surName") {
       if (lettersOnlyRegex.test(value)) {
-        setAdminData({
+        newAdminData = {
           ...adminData,
           [name]: value,
-        });
+        };
+        setAdminData(newAdminData);
+        Cookies.set("adminData", JSON.stringify(newAdminData), { expires: 30 });
       }
     } else {
-      setAdminData({
+      newAdminData = {
         ...adminData,
         [name]: value,
-      });
+      };
+      setAdminData(newAdminData);
+      Cookies.set("adminData", JSON.stringify(newAdminData), { expires: 30 });
     }
   };
 
@@ -282,6 +288,17 @@ const SignUpAdmin = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const savedData = Cookies.get("adminData");
+    if (savedData) {
+      try {
+        setAdminData(JSON.parse(savedData));
+      } catch (err) {
+        console.error("Cookie parse error:", err);
+      }
+    }
+  }, []);
 
   return (
     <div
