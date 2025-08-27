@@ -173,10 +173,14 @@ const Users = () => {
     <>
       <div
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "1050px",
+          //Arkaplanın tam sığmasını sağlamak için
+          backgroundPosition: "center", // Arkaplanı ortalamak için
+          backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
+          height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
+          width: "100vw", // Genişlik tüm ekranı kaplar
+          overflow: "auto", // İçeriğin kaydırılmasını sağlar
         }}
       >
         <Navbar />

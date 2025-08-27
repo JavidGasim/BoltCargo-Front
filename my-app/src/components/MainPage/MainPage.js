@@ -107,7 +107,7 @@ export default function MainPage() {
           </div>
         </div>
         <div className="mainpageFooterRightSide">
-          <button>Join us</button>
+          <button onClick={() => navigate("/signup")}>Join us</button>
         </div>
       </footer>
     </div>

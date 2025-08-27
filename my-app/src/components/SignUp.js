@@ -386,6 +386,7 @@ const SignUp = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          height: "auto",
         }}
       >
         <h2 style={{ color: "white" }}>Sign Up</h2>

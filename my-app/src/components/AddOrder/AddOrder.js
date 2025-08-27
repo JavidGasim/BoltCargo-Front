@@ -329,6 +329,8 @@ const AddOrder = ({
           flexDirection: "column",
           alignItems: "center",
           marginTop: "40px",
+          height:"auto", 
+          marginBottom:"40px"
         }}
       >
         <h2

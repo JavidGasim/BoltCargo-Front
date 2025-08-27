@@ -110,7 +110,7 @@ const NewFeedBack = () => {
     <>
       <div
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
           backgroundSize: "cover",
           //Arkaplanın tam sığmasını sağlamak için
           backgroundPosition: "center", // Arkaplanı ortalamak için
