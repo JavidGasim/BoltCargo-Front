@@ -122,7 +122,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  background: linear-gradient(90deg, #060b26, #060b26);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeIn 2s ease-in-out, slideIn 1s ease-out;

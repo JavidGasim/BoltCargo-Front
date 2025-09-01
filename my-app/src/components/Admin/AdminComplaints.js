@@ -64,7 +64,7 @@ const AdminComplaints = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için
@@ -76,7 +76,7 @@ const AdminComplaints = () => {
     >
       <AdminNavbar />
       <div className="complaints-container">
-        <h2 className="complaints-title" style={{ color: "gold" }}>
+        <h2 className="complaints-title" >
           Complaints
         </h2>
         <div className="complaints-grid">

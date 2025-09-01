@@ -162,19 +162,19 @@ const AdminAllClient = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        //Arkaplanın tam sığmasını sağlamak için
-        backgroundPosition: "center", // Arkaplanı ortalamak için
-        backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
-        height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
-        width: "100vw", // Genişlik tüm ekranı kaplar
-        overflow: "auto", // İçeriğin kaydırılmasını sağlar
+   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
+          backgroundSize: "cover",
+          //Arkaplanın tam sığmasını sağlamak için
+          backgroundPosition: "center", // Arkaplanı ortalamak için
+          backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
+          height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
+          width: "100vw", // Genişlik tüm ekranı kaplar
+          overflow: "auto", // İçeriğin kaydırılmasını sağlar
       }}
     >
       <AdminHeader />
       <div className="header-container">
-        <h1 className="main-header">These Are All Clients</h1>
+        <h1 className="main-header" style={{ color: "#060b26" }}>These Are All Clients</h1>
       </div>
       <div className="grid-container">
         {myUsers.map((user) => (

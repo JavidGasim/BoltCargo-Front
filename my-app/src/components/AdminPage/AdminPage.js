@@ -29,8 +29,19 @@ const AdminPage = () => {
     Count();
   }, []);
   return (
-    <div style={{ position: "relative", height: "100vh", overflow: "auto" }}>
-      {/* Animated Gradient Background */}
+    <div
+      style={{
+        position: "relative",
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
+        backgroundSize: "cover",
+        //Arkaplanın tam sığmasını sağlamak için
+        backgroundPosition: "center", // Arkaplanı ortalamak için
+        backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
+        height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
+        width: "100vw", // Genişlik tüm ekranı kaplar
+        overflow: "auto",
+      }}
+    >
       <div
         style={{
           position: "absolute",

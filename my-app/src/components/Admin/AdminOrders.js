@@ -9,13 +9,12 @@ import AdminNavbar from "../AdminNavbar/AdminNavbar";
 import AdminOrderHeader from "./AdminOrderHeader";
 import backgroundImage from "../../img/orderAdmin.webp";
 
-
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
   const [user, setUser] = useState({});
   const [expandedOrders, setExpandedOrders] = useState({});
 
-  const generalUrl = "https://localhost:5000/api/v1/";  
+  const generalUrl = "https://localhost:5000/api/v1/";
 
   const [connection, setConnection] = useState(null);
 
@@ -168,7 +167,7 @@ const AdminOrders = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için

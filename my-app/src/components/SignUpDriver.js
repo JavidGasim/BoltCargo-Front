@@ -297,19 +297,44 @@ const SignUpDriver = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          height: "auto",
         }}
       >
         <h2 style={{ color: "white" }}>Driver Sign Up</h2>
 
-        <div className={styles.formGroup}>
-          <input type="file" accept="image/*" onChange={handleFileChange} />
+        <div style={{ margin: "auto", marginBottom: "20px" }}>
           {previewUrl && (
             <img
               src={previewUrl}
               alt="Preview"
-              className={styles.imagePreview}
+              style={{
+                margin: "auto",
+                borderRadius: "50%",
+                width: "150px",
+                height: "150px",
+              }}
             />
           )}
+        </div>
+
+        <div
+          style={{
+            maxWidth: "300px",
+            margin: "0 auto",
+            marginBottom: "15px",
+            position: "relative",
+          }}
+        >
+          <input
+            type="file"
+            accept="image/*"
+            style={{
+              paddingLeft: "30px",
+              padding: "8px",
+              width: "100%",
+            }}
+            onChange={handleFileChange}
+          />
         </div>
 
         <div className={styles.formGroup}>

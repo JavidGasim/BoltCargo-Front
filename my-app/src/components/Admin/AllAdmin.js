@@ -7,7 +7,6 @@ import { HubConnectionBuilder } from "@microsoft/signalr";
 import AdminHeader from "./AdminHeader";
 import backgroundImage from "../../img/usersadmin.webp";
 
-
 const AllAdmin = () => {
   const generalUrl = "https://localhost:5000/api/v1/";
   const [user, setUser] = useState({});
@@ -116,7 +115,7 @@ const AllAdmin = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için

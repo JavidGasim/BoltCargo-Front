@@ -390,7 +390,7 @@ const SignUp = () => {
         }}
       >
         <h2 style={{ color: "white" }}>Sign Up</h2>
-        <div style={{ marginLeft: "35%", marginBottom: "20px" }}>
+        <div style={{ marginBottom: "20px" }}>
           {previewUrl && (
             <img
               src={previewUrl}
@@ -864,7 +864,7 @@ const SignUp = () => {
             gap: "20px",
           }}
         >
-          <label style={{ color: "white" }}>
+          {/* <label style={{ color: "white" }}>
             <input
               type="radio"
               name="role"
@@ -873,7 +873,7 @@ const SignUp = () => {
               onChange={changeHandler}
             />
             Driver
-          </label>
+          </label> */}
           <label style={{ color: "white" }}>
             <input
               type="radio"

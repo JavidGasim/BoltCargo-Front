@@ -9,6 +9,7 @@
   margin-bottom: 20px;
   font-size: 2em;
   text-align: center;
+  color: #060b26;
 }
 
 .complaints-grid {
@@ -41,12 +42,12 @@
 }
 
 .sender {
-  border-bottom: 2px solid gold; /* Differentiates sender */
+  border-bottom: 2px solid #060b26; /* Differentiates sender */
   padding-bottom: 10px;
 }
 
 .receiver {
-  border-top: 2px solid gold; /* Differentiates receiver */
+  border-top: 2px solid #060b26; /* Differentiates receiver */
   padding-top: 10px;
 }
 

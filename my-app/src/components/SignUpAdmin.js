@@ -327,7 +327,7 @@ const SignUpAdmin = () => {
       >
         <h2 style={{ color: "white", textAlign: "center" }}>Admin Sign Up</h2>
 
-        <div style={{ marginLeft: "30%", marginBottom: "20px" }}>
+        <div style={{ marginBottom: "20px" }}>
           {previewUrl && (
             <img
               src={previewUrl}

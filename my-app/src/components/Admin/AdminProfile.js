@@ -8,7 +8,6 @@ import { HubConnectionBuilder } from "@microsoft/signalr";
 import AdminNavbar from "../AdminNavbar/AdminNavbar";
 import backgroundImage from "../../img/profileadmin.webp";
 
-
 const AdminProfile = () => {
   const [userName, setUserName] = useState();
   const [name1, setName] = useState();
@@ -275,7 +274,7 @@ const AdminProfile = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için

@@ -62,7 +62,7 @@ const CheckCodeAdmin = () => {
   }
 
   return (
-    <div className="loginForm">
+    <div style={{ display: "flex", justifyContent: "center", height: "100vh" }}>
       <div
         className="loginForm"
         style={{

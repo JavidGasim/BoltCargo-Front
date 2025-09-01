@@ -8,7 +8,6 @@ import AdminHeader from "./AdminHeader";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa"; // Font Awesome ikonu
 import backgroundImage from "../../img/usersadmin.webp";
 
-
 const AdminAllDriver = () => {
   const generalUrl = "https://localhost:5000/api/v1/";
   const [user, setUser] = useState({});
@@ -160,7 +159,7 @@ const AdminAllDriver = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için
