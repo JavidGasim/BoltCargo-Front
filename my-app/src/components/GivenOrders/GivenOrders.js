@@ -7,7 +7,6 @@ import "./GivenOrders.css";
 import { HubConnectionBuilder } from "@microsoft/signalr";
 import backgroundImage from "../../img/driver.webp";
 
-
 const GivenOrders = () => {
   const [orders, setOrders] = useState([]);
   const [user, setUser] = useState({});
@@ -215,7 +214,6 @@ const GivenOrders = () => {
         createChat(user.id, senderId);
         startSignalRConnection();
         GetAllOrders();
-        
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -224,16 +222,16 @@ const GivenOrders = () => {
 
   return (
     <div
-    style={{
-      backgroundImage: `url(${backgroundImage})`,
-      backgroundSize: "cover",
-      //Arkaplanın tam sığmasını sağlamak için
-      backgroundPosition: "center", // Arkaplanı ortalamak için
-      backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
-      height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
-      width: "100%", // Genişlik tüm ekranı kaplar
-      overflow: "auto", // İçeriğin kaydırılmasını sağlar
-    }}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
+        backgroundSize: "cover",
+        //Arkaplanın tam sığmasını sağlamak için
+        backgroundPosition: "center", // Arkaplanı ortalamak için
+        backgroundAttachment: "fixed", // Kaydırma sırasında sabit tutar
+        height: "100vh", // Görüntüyü görünüm alanına uyacak şekilde yapar
+        width: "100%", // Genişlik tüm ekranı kaplar
+        overflow: "auto", // İçeriğin kaydırılmasını sağlar
+      }}
     >
       <div className="order-card" style={{ marginTop: "35px" }}>
         <h2 className="order-heading">Order Summary</h2>

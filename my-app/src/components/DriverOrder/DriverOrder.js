@@ -6,7 +6,6 @@ import Cookies from "js-cookie";
 import { HubConnectionBuilder } from "@microsoft/signalr";
 import backgroundImage from "../../img/order.webp";
 
-
 const DriverOrder = () => {
   const [orders, setOrders] = useState([]);
   const [showAll, setShowAll] = useState(false);
@@ -259,7 +258,7 @@ const DriverOrder = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${process.env.PUBLIC_URL}/mainpagebg.jpg)`,
         backgroundSize: "cover",
         //Arkaplanın tam sığmasını sağlamak için
         backgroundPosition: "center", // Arkaplanı ortalamak için
